@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    font-family: 'Fira Mono', monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.button {
+    cursor: pointer;
+    
+    border: 0.1rem solid black;
+    border-radius: 64px;
+    padding: 0.5rem 2rem;
+}
+
+.button:hover, .button:active {
+    transform: scale(1.25);
+
+    background-color: bisque;
+}
