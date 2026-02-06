@@ -4,15 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS Game</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <div class="create-new-game-button button">Create new game</div>
-    <div class="start-game-button button">Start game</div>
-    <div class="review-game-button button">Review game</div>
-    <div class="rock-button button">Rock</div>
-    <div class="paper-button button">Paper</div>
-    <div class="scissors-button button">Scissors</div>
+    <section class="menu">
+        <h1>Rock, paper, scissors</h1>
+        <div class="menu-container container">
+            <div class="create-new-game-button menu-button button">Create new game</div>
+            <div class="start-game-button menu-button button">Start game</div>
+            <div class="review-game-button menu-button button">Review game</div>
+        </div>
+    </section>
+    <section class="game hidden">
+        <div class="game-container container">
+            <h1 class="round-number">Round: 1/5</h1>
+            <div class="moves-container">
+                <div class="rock-button move-button button"><i class="fa-solid fa-hand-fist"></i></div>
+                <div class="paper-button move-button button"><i class="fa-solid fa-hand"></i></div>
+                <div class="scissors-button move-button button"><i class="fa-solid fa-hand-peace"></i></div>
+            </div>
+        </div>
+        <div class="round-result-container hidden">
+            <h3 class="computer-move">Computer picked: ?</h3>
+            <h3 class="round-result">WIN/LOSE/DRAW</h3>
+            <div class="next-round-button button">Next Round</div>
+        </div>
+        <div class="exit-button button">Exit</div>
+    </section>
     <script src="/js/main.js" type="module"></script>
 </body>
 </html>

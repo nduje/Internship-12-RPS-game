@@ -1,4 +1,5 @@
 import { createNewGame, playRound, startGame } from "./api.js";
+import { toggleGame, toggleMenu } from "./ui.js";
 
 function setupEventListeners() {
     const btnCreateGame = document.querySelector(".create-new-game-button");
@@ -15,6 +16,12 @@ function setupEventListeners() {
 
     const btnScissors = document.querySelector(".scissors-button");
     btnScissors.addEventListener("click", () => playRound("scissors"));
+
+    const btnNextRound = document.querySelector(".next-round-button");
+    btnNextRound.addEventListener("click", () => toggleGame());
+
+    const btnExit = document.querySelector(".exit-button");
+    btnExit.addEventListener("click", () => toggleMenu());
 }
 
 setupEventListeners();

@@ -1,0 +1,9 @@
+:root {
+    --rps-yellow: #FFFF00;
+    --rps-blue: #31C6D4;
+    --rps-red: #FF1E1E;
+    --rps-black: #003049;
+    --rps-white: #FDF0D5;
+    
+    --rps-font: 'Fira Mono', monospace;
+}
