@@ -17,7 +17,7 @@ The game simulates online play by persisting data remotely via the **Fetch API**
 
 - Create a new game (5 rounds stored via **POST** requests)
 - Play rounds one by one with **Rock / Paper / Scissors**
-- Update player moves using **PUT** requests
+- Update player moves using **PATCH** requests
 - Immediate round result display (win / lose / draw)
 - Review all rounds and final score (e.g. `2/5`)
 - Fetch multiple rounds at once using **GET** requests with query parameters

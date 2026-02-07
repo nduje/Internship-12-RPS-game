@@ -22,20 +22,34 @@ export function showResult(computerMove, winner) {
     }
 }
 
-export function toggleGame() {
-    const roundResultContainer = document.querySelector(".round-result-container");
-    const movesContainer = document.querySelector(".game-container");
-    
-    roundResultContainer.classList.toggle("hidden");
-    movesContainer.classList.toggle("hidden");
-}
-
-export function toggleMenu() {
+export function showMenu() {
     const menuContainer = document.querySelector(".menu");
     const gameContainer = document.querySelector(".game");
+    const reviewContainer = document.querySelector(".review");
     
-    menuContainer.classList.toggle("hidden");
-    gameContainer.classList.toggle("hidden");
+    menuContainer.classList.remove("hidden");
+    gameContainer.classList.add("hidden");
+    reviewContainer.classList.add("hidden");
+}
+
+export function showReview() {
+    const menuContainer = document.querySelector(".menu");
+    const gameContainer = document.querySelector(".game");
+    const reviewContainer = document.querySelector(".review");
+    
+    menuContainer.classList.add("hidden");
+    gameContainer.classList.add("hidden");
+    reviewContainer.classList.remove("hidden");
+}
+
+export function showGame() {
+    const menuContainer = document.querySelector(".menu");
+    const gameContainer = document.querySelector(".game");
+    const reviewContainer = document.querySelector(".review");
+    
+    menuContainer.classList.add("hidden");
+    gameContainer.classList.remove("hidden");
+    reviewContainer.classList.add("hidden");
 }
 
 export function clearGame() {
@@ -44,4 +58,12 @@ export function clearGame() {
     
     roundResultContainer.classList.add("hidden");
     movesContainer.classList.remove("hidden");
+}
+
+export function toggleGame() {
+    const roundResultContainer = document.querySelector(".round-result-container");
+    const movesContainer = document.querySelector(".game-container");
+    
+    roundResultContainer.classList.toggle("hidden");
+    movesContainer.classList.toggle("hidden");
 }
