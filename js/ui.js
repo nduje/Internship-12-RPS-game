@@ -37,3 +37,11 @@ export function toggleMenu() {
     menuContainer.classList.toggle("hidden");
     gameContainer.classList.toggle("hidden");
 }
+
+export function clearGame() {
+    const roundResultContainer = document.querySelector(".round-result-container");
+    const movesContainer = document.querySelector(".game-container");
+    
+    roundResultContainer.classList.add("hidden");
+    movesContainer.classList.remove("hidden");
+}

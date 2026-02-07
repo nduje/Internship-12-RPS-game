@@ -1,5 +1,5 @@
 import { generateRounds, applyPlayerMove } from "./logic.js";
-import { showResult, showRoundNumber, toggleGame, toggleMenu } from "./ui.js";
+import { clearGame, showResult, showRoundNumber, toggleGame, toggleMenu } from "./ui.js";
 
 const API_URL = "https://api.restful-api.dev/objects";
 
@@ -29,6 +29,7 @@ export async function createNewGame() {
         currentRoundNumber = 1;
         console.log("Game created: ", currentGameId);
 
+        clearGame();
         showRoundNumber(currentRoundNumber);
     } catch (error) {
         console.log("Something went wrong: ", error);
