@@ -17,33 +17,43 @@
         </div>
     </section>
     <section class="game hidden">
-        <div class="game-container container">
-            <h1 class="round-number">Round: 1/5</h1>
-            <div class="moves-container">
-                <div class="rock-button move-button button"><i class="fa-solid fa-hand-fist"></i></div>
-                <div class="paper-button move-button button"><i class="fa-solid fa-hand"></i></div>
-                <div class="scissors-button move-button button"><i class="fa-solid fa-hand-peace"></i></div>
+        <div class="start-game-container container hidden">
+            <div class="game-container container hidden">
+                <h1 class="round-number">Round: 1/5</h1>
+                <div class="moves-container">
+                    <div class="rock-button move-button button"><i class="fa-solid fa-hand-fist"></i></div>
+                    <div class="paper-button move-button button"><i class="fa-solid fa-hand"></i></div>
+                    <div class="scissors-button move-button button"><i class="fa-solid fa-hand-peace"></i></div>
+                </div>
+            </div>
+            <div class="round-result-container hidden">
+                <h3 class="computer-move">Computer picked: ?</h3>
+                <h3 class="round-result">WIN/LOSE/DRAW</h3>
+                <div class="next-round-button button">Next Round</div>
+                <div class="finish-game-button button hidden">Finish Game</div>
             </div>
         </div>
-        <div class="round-result-container hidden">
-            <h3 class="computer-move">Computer picked: ?</h3>
-            <h3 class="round-result">WIN/LOSE/DRAW</h3>
-            <div class="next-round-button button">Next Round</div>
+        <div class="no-game-container container">
+            <h1>No game sessions available!</h1>
         </div>
         <div class="exit-button button">Exit</div>
     </section>
-    <section class="review hidden">
-        <h1 class="review-title">Review Game</h1>
-        <div class="rounds-review-container">
+    <section class="review hidden container">
+        <div class="review-container hidden">
+            <h1 class="review-title">Review Game</h1>
+            <div class="rounds-review-container">
 
+            </div>
+            <div class="total-score-container">
+                <h2 class="player-score total-score-info">Player Score: ?</h2>
+                <h2 class="computer-score total-score-info">Computer Score: ?</h2>
+            </div>
         </div>
-        <div class="total-score-container">
-            <h2 class="total-score-header">Total Score:</h2>
-            <h3 class="player-wins total-score-info">Player Score: ?</h3>
-            <h3 class="computer-wins total-score-info">Computer Score: ?</h3>
+        <div class="no-review-container">
+            <h1 class="no-review-title">No games available for review!</h1>
         </div>
         <div class="exit-button button">Exit</div>
     </section>
-    <script src="/js/main.js" type="module"></script>
+    <script src="/js/app.js" type="module"></script>
 </body>
 </html>

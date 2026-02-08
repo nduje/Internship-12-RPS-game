@@ -99,6 +99,52 @@ section {
     border-color: var(--rps-red);
 }
 
+.review-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.rounds-review-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.round-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.round-container h2 {
+    font-size: 1.25rem;
+}
+
+.round-container h3 {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.total-score-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2.5rem;
+}
+
+.total-score-container h3 {
+    font-size: 1.25rem;
+    text-decoration: underline;
+}
+
 .hidden {
     display: none;
 }

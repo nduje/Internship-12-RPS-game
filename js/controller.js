@@ -1,9 +1,9 @@
 import { generateRounds, applyPlayerMove } from "./logic.js";
-import { clearGame, showGame, showResult, showRoundNumber, toggleGame } from "./ui.js";
+import { clearGame, showGame, showResult, showReview, showRoundNumber, showScore, toggleGame, toggleReview, showStartGame, hideStartGame } from "./ui.js";
 import { addGame, getGame, updateGame } from "./api.js";
 
 let currentGameId = null;
-let currentRoundNumber = null;
+let previousGameId = null;
 
 export async function createNewGame() {
     const gamePayload = {
@@ -27,21 +27,31 @@ export async function createNewGame() {
 }
 
 export async function startGame() {
-    const game = await getGame(currentGameId);
+    if (currentGameId) {
+        const game = await getGame(currentGameId);
 
-    const updatedData = {
-        ...game.data,
-        status: "started"
-    };
+        const updatedData = {
+            ...game.data,
+            status: "started"
+        };
 
-    const updatedGame = await updateGame(currentGameId, updatedData);
+        const updatedGame = await updateGame(currentGameId, updatedData);
+
+        showStartGame();
+        showRoundNumber(updatedGame.data.currentRoundNumber);
+    }
+
+    else {
+        hideStartGame();
+    }
 
     showGame();
-    showRoundNumber(updatedGame.data.currentRoundNumber);
 }
 
 export async function playRound(move) {
     const game = await getGame(currentGameId);
+
+    console.log(game);
 
     const updatedData = applyPlayerMove(game.data, move);
     const updatedGame = await updateGame(currentGameId, updatedData);
@@ -51,5 +61,16 @@ export async function playRound(move) {
 
     toggleGame();
     showRoundNumber(updatedGame.data.currentRoundNumber);
-    showResult(lastRound.computerMove, lastRound.winner);
+
+    if (updatedGame.data.currentRoundNumber > updatedGame.data.totalRounds) {
+        showScore(updatedGame.data);
+        showResult(lastRound.computerMove, lastRound.winner, true);
+    }
+
+    else showResult(lastRound.computerMove, lastRound.winner, false);
+}
+
+export function resetGame() {
+    previousGameId = currentGameId;
+    currentGameId = null;
 }
