@@ -148,3 +148,9 @@ section {
 .hidden {
     display: none;
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: 50%;
+    cursor: default;
+}

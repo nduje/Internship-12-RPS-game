@@ -1,5 +1,5 @@
 import { generateRounds, applyPlayerMove } from "./logic.js";
-import { clearGame, showGame, showResult, showReview, showRoundNumber, showScore, toggleGame, toggleReview, showStartGame, hideStartGame } from "./ui.js";
+import { clearGame, showGame, showResult, showReview, showRoundNumber, showScore, toggleGame, toggleReview, showStartGame, hideStartGame, disableStartGame } from "./ui.js";
 import { addGame, getGame, updateGame } from "./api.js";
 
 let currentGameId = null;
@@ -24,6 +24,7 @@ export async function createNewGame() {
 
     clearGame();
     showRoundNumber(1);
+    disableStartGame();
 }
 
 export async function startGame() {
@@ -73,4 +74,5 @@ export async function playRound(move) {
 export function resetGame() {
     previousGameId = currentGameId;
     currentGameId = null;
+    disableStartGame();
 }

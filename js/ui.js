@@ -139,3 +139,9 @@ export function hideStartGame() {
     gameContainer.classList.add("hidden");
     noGameContainer.classList.remove("hidden");
 }
+
+export function disableStartGame() {
+    const btnStartGame = document.querySelector(".start-game-button");
+
+    btnStartGame.classList.toggle("disabled");
+}
